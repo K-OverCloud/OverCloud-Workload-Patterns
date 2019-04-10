@@ -14,7 +14,7 @@ In this step, you should run following commands on IoT-Cloud Hub.
 
 Before you deploy Smart Energy application functionalities based on kubernetes on your IoT-Cloud Hub you need to move your directory.
 
-$ cd SmartX-MicroBox/application_functionality/Smart-Energy-service/Smart-Energy-service-yaml
+$ cd /OverCloud-Workload-Patterns/IoT-Cloud_pattern
 
 To deploy Smart Energy application functionalities
 
@@ -26,8 +26,8 @@ In this step, you need to run following commands on IoT devices.
 
 Before you execute IoT devices functionalities you need to move your directory as follows.
 
-$ cd /SmartX-MicroBox/application_functionality/Smart-Energy-service$ cd Device_functions/
+$ cd /OverCloud-Workload-Patterns/IoT_pattern
 
-$ ./TempHumsend.py
+$ ./TempHumsend2.py
 
 
