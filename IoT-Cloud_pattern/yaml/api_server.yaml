@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-server
+  labels:
+    app: api-server
+spec:
+  type: NodePort
+  ports:
+  - name: "api-server"
+    port: 5000
+    nodePort: 32014
+  selector:
+    app: api-server
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api-server
+        image: lshyeung/api-server
+        ports:
+        - containerPort: 5000
+

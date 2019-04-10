@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: consumer-d1-inference
+  labels:
+    app: consumer-d1-inference
+spec:
+  type: NodePort
+  ports:
+  - name: "consumer-d1-inference"
+    port: 3334
+    nodePort: 32112
+  selector:
+    app: consumer-d1-inference
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: consumer-d1-inference
+spec:
+  template:
+    metadata:
+      labels:
+        app: consumer-d1-inference
+    spec:
+      containers:
+      - name: consumer-d1-inference
+        image: lshyeung/consumer_d1_inference
+        ports:
+        - containerPort: 3334
+
